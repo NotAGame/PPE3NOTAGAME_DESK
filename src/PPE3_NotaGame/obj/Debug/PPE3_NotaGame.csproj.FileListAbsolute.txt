@@ -27,3 +27,20 @@ D:\CA\2016-2017\PPE 2ème année\PPE3_NotaGame - Collection\PPE3_NotaGame\bin\De
 D:\CA\2016-2017\PPE 2ème année\PPE3_NotaGame - Collection\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.pdb
 D:\CA\2016-2017\PPE 2ème année\PPE3_NotaGame - Collection\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.CodeAnalysisLog.xml
 D:\CA\2016-2017\PPE 2ème année\PPE3_NotaGame - Collection\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.lastcodeanalysissucceeded
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.config
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.XML
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.exe
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.pdb
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.pdb
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.CodeAnalysisLog.xml
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.lastcodeanalysissucceeded
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\bin\Debug\MySql.Data.dll
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\bin\Debug\MySql.Data.xml
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csprojResolveAssemblyReference.cache
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDConstructeur.resources
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDSupport.resources
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormGestion.resources
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormPrincipale.resources
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.Properties.Resources.resources
+C:\Users\julien\Desktop\dossier\PPE3NOTAGAME desk\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csproj.GenerateResource.Cache

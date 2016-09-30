@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +53,12 @@
     </Compile>
     <Compile Include="FormCRUDConstructeur.designer.cs">
       <DependentUpon>FormCRUDConstructeur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCRUDJeuxvideox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCRUDJeuxvideox.Designer.cs">
+      <DependentUpon>FormCRUDJeuxvideox.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCRUDSupport.cs">
       <SubType>Form</SubType>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCRUDConstructeur.resx">
       <DependentUpon>FormCRUDConstructeur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCRUDJeuxvideox.resx">
+      <DependentUpon>FormCRUDJeuxvideox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCRUDSupport.resx">
       <DependentUpon>FormCRUDSupport.cs</DependentUpon>

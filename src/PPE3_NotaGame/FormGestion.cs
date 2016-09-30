@@ -79,6 +79,33 @@ namespace PPE3_NotaGame
                         dGvJeux.Columns["ANNEESORTIE"].HeaderText = "Année_Sortie";
                        
                     }
+                    else if (table == "users")
+                    {
+                        bindingSource1.DataSource = Controleur.Vmodele.DT[4];
+                        dGvJeux.DataSource = bindingSource1;
+                        dGvJeux.Columns["IDU"].HeaderText = "Id Users";
+                        dGvJeux.Columns["EMAIL"].HeaderText = "email";
+                        dGvJeux.Columns["PSEUDO"].HeaderText = "pseudo";
+                        dGvJeux.Columns["COMMUNAUTE"].HeaderText = "communaute";
+                    }
+                    else if (table == "jeuxvideos")
+                    {
+                        bindingSource1.DataSource = Controleur.Vmodele.DT[5];
+                        dGvJeux.DataSource = bindingSource1;
+                        dGvJeux.Columns["IDJV"].HeaderText = "Id Jeux videos";
+                        dGvJeux.Columns["NOMJV"].HeaderText = "Nom Jeux vieos";
+                        dGvJeux.Columns["ANNEESORTIE"].HeaderText = "Annee Sortie";
+                        dGvJeux.Columns["CLASSIFICATION"].HeaderText = "Classification";
+                        dGvJeux.Columns["EDITEUR"].HeaderText = "Editeur";
+                        dGvJeux.Columns["DESCRIPTION"].HeaderText = "Description";
+                    }
+                    else if (table == "compatible")
+                    {
+                        bindingSource1.DataSource = Controleur.Vmodele.DT[6];
+                        dGvJeux.DataSource = bindingSource1;
+                        dGvJeux.Columns["NOMJV"].HeaderText = "Nom Jeux videos";
+                        dGvJeux.Columns["NOMS"].HeaderText = "Nom Support";
+                    }
 
                     // mise à jour du dataGridView via le bindingSource rempli par le DataTable
                     dGvJeux.Refresh();
