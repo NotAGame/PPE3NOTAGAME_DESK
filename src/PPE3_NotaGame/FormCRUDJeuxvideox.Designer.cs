@@ -36,10 +36,11 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.TbNom = new System.Windows.Forms.TextBox();
             this.TbDesc = new System.Windows.Forms.TextBox();
-            this.TbClass = new System.Windows.Forms.TextBox();
             this.TbEditeur = new System.Windows.Forms.TextBox();
             this.TbEdit = new System.Windows.Forms.Label();
-            this.TbAnne = new System.Windows.Forms.TextBox();
+            this.numAnnee = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxClass = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.numAnnee)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -115,13 +116,6 @@
             this.TbDesc.Size = new System.Drawing.Size(136, 96);
             this.TbDesc.TabIndex = 17;
             // 
-            // TbClass
-            // 
-            this.TbClass.Location = new System.Drawing.Point(192, 195);
-            this.TbClass.Name = "TbClass";
-            this.TbClass.Size = new System.Drawing.Size(121, 22);
-            this.TbClass.TabIndex = 18;
-            // 
             // TbEditeur
             // 
             this.TbEditeur.Location = new System.Drawing.Point(192, 247);
@@ -138,22 +132,52 @@
             this.TbEdit.TabIndex = 20;
             this.TbEdit.Text = "éditeur :";
             // 
-            // TbAnne
+            // numAnnee
             // 
-            this.TbAnne.Location = new System.Drawing.Point(194, 127);
-            this.TbAnne.Name = "TbAnne";
-            this.TbAnne.Size = new System.Drawing.Size(119, 22);
-            this.TbAnne.TabIndex = 21;
+            this.numAnnee.Location = new System.Drawing.Point(192, 131);
+            this.numAnnee.Maximum = new decimal(new int[] {
+            2018,
+            0,
+            0,
+            0});
+            this.numAnnee.Minimum = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            this.numAnnee.Name = "numAnnee";
+            this.numAnnee.Size = new System.Drawing.Size(120, 22);
+            this.numAnnee.TabIndex = 21;
+            this.numAnnee.Value = new decimal(new int[] {
+            1900,
+            0,
+            0,
+            0});
+            // 
+            // comboBoxClass
+            // 
+            this.comboBoxClass.FormattingEnabled = true;
+            this.comboBoxClass.Items.AddRange(new object[] {
+            "3",
+            "7",
+            "10",
+            "12",
+            "16",
+            "18"});
+            this.comboBoxClass.Location = new System.Drawing.Point(191, 197);
+            this.comboBoxClass.Name = "comboBoxClass";
+            this.comboBoxClass.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxClass.TabIndex = 22;
             // 
             // FormCRUDJeuxvideox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 522);
-            this.Controls.Add(this.TbAnne);
+            this.Controls.Add(this.comboBoxClass);
+            this.Controls.Add(this.numAnnee);
             this.Controls.Add(this.TbEdit);
             this.Controls.Add(this.TbEditeur);
-            this.Controls.Add(this.TbClass);
             this.Controls.Add(this.TbDesc);
             this.Controls.Add(this.TbNom);
             this.Controls.Add(this.btnAnnuler);
@@ -164,6 +188,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormCRUDJeuxvideox";
             this.Text = "FormCRUDJeuxvideox";
+            ((System.ComponentModel.ISupportInitialize)(this.numAnnee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,9 +203,9 @@
         private System.Windows.Forms.Button btnOK;
         public System.Windows.Forms.TextBox TbNom;
         public System.Windows.Forms.TextBox TbDesc;
-        public System.Windows.Forms.TextBox TbClass;
         private System.Windows.Forms.Label TbEdit;
         public System.Windows.Forms.TextBox TbEditeur;
-        public System.Windows.Forms.TextBox TbAnne;
+        public System.Windows.Forms.NumericUpDown numAnnee;
+        public System.Windows.Forms.ComboBox comboBoxClass;
     }
 }

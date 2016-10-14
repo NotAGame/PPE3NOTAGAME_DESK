@@ -226,8 +226,8 @@ namespace PPE3_NotaGame
                 if (c == 'c')  // mode ajout donc pas de valeur à passer à la nouvelle forme
                 {
                     formCRUD.TbNom.Clear();
-                    formCRUD.TbAnne.Clear();
-                    formCRUD.TbClass.Clear();
+                    formCRUD.numAnnee.Value = 1900;
+                    formCRUD.comboBoxClass.SelectedIndex = 0;
                     formCRUD.TbEditeur.Clear();
                     formCRUD.TbDesc.Clear();
                 }
@@ -236,8 +236,8 @@ namespace PPE3_NotaGame
                 {
                     // on remplit les zones par les valeurs du dataGridView correspondantes
                     formCRUD.TbNom.Text = vmodele.DT[5].Rows[indice][1].ToString();
-                    formCRUD.TbAnne.Text = vmodele.DT[5].Rows[indice][2].ToString();
-                    formCRUD.TbClass.Text = vmodele.DT[5].Rows[indice][3].ToString();
+                    formCRUD.numAnnee.Value = Convert.ToInt32(vmodele.DT[5].Rows[indice][2]);
+                    formCRUD.comboBoxClass.SelectedValue = Convert.ToInt32(vmodele.DT[5].Rows[indice][3]);
                     formCRUD.TbEditeur.Text = vmodele.DT[5].Rows[indice][4].ToString();
                     formCRUD.TbDesc.Text = vmodele.DT[5].Rows[indice][5].ToString();
 
@@ -251,12 +251,12 @@ namespace PPE3_NotaGame
                     if (c == 'c') // ajout
                     {
                         // on crée une nouvelle ligne dans le dataView
-                        if (formCRUD.TbNom.Text != "" && formCRUD.TbAnne.Text != "" && formCRUD.TbClass.Text != "" && formCRUD.TbEditeur.Text != "" && formCRUD.TbDesc.Text != "")
+                        if (formCRUD.TbNom.Text != "" && Convert.ToInt32(formCRUD.comboBoxClass.SelectedItem) != 0 && formCRUD.TbEditeur.Text != "" && formCRUD.TbDesc.Text != "")
                         {
                             DataRow NouvLigne = vmodele.DT[5].NewRow();
                             NouvLigne["NomJV"] = formCRUD.TbNom.Text;
-                            NouvLigne["anneeSortie"] = Convert.ToInt32(formCRUD.TbAnne.Text);
-                            NouvLigne["classification"] = Convert.ToInt32(formCRUD.TbClass.Text);
+                            NouvLigne["anneeSortie"] = formCRUD.numAnnee.Value;
+                            NouvLigne["classification"] = Convert.ToInt32(formCRUD.comboBoxClass.SelectedItem);
                             NouvLigne["editeur"] = formCRUD.TbEditeur.Text;
                             NouvLigne["description"] = formCRUD.TbDesc.Text;
                             vmodele.DT[5].Rows.Add(NouvLigne);
@@ -269,8 +269,8 @@ namespace PPE3_NotaGame
                     {
                         // on met à jour le dataTable avec les nouvelles valeurs
                         vmodele.DT[5].Rows[indice]["NomJV"] = formCRUD.TbNom.Text;
-                        vmodele.DT[5].Rows[indice]["anneeSortie"] = Convert.ToInt32(formCRUD.TbAnne.Text);
-                        vmodele.DT[5].Rows[indice]["classification"] = Convert.ToInt32(formCRUD.TbClass.Text);
+                        vmodele.DT[5].Rows[indice]["anneeSortie"] = formCRUD.numAnnee.Value;
+                        vmodele.DT[5].Rows[indice]["classification"] = Convert.ToInt32(formCRUD.comboBoxClass.SelectedItem);
                         vmodele.DT[5].Rows[indice]["editeur"] = formCRUD.TbEditeur.Text;
                         vmodele.DT[5].Rows[indice]["description"] = formCRUD.TbDesc.Text;
                         vmodele.DA[5].Update(vmodele.DT[5]);
@@ -410,6 +410,7 @@ namespace PPE3_NotaGame
                 // si l’utilisateur clique sur OK
                 if (formCRUD.DialogResult == DialogResult.OK)
                 {
+
                     if (c == 'c') // ajout
                     {
                         // on crée une nouvelle ligne dans le dataView

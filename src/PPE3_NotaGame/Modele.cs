@@ -198,9 +198,8 @@ namespace PPE3_NotaGame
             if (table == "compatible")
             {
                 charger("select * from compatible", dT[6], dA[6]);
-                //charger("select idS, nomS, nomJV, idJV from compatible C inner join jeuxvideos J on C.IDJV = J.IDJV inner join support S on S.IDS = C.IDS", dT[6], dA[6]);
+                //charger("select idS, nomS, nomJV, idJV from compatible C inner join jeuxvideos J on C.IDJV = J.IDJV inner join support S on S.IDS = C.IDS", dT[7], dA[7]);
             }
-
 
 
         }
