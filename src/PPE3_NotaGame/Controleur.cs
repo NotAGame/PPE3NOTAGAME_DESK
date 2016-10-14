@@ -202,15 +202,16 @@ namespace PPE3_NotaGame
 
 
         /// <summary>
-        /// permet le crud sur la table Support
+        /// permet le crud sur la table Constructeur
         /// </summary>
-        /// <param name="c">définit l'action : c:create, u update, d delete </param>
+        /// <param name="c">définit l'action : c:create, u update, d delete</param>
         /// <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
-        public static void crud_jeuxvideox(Char c, int indice)
+        public static void crud_Jeuxvideo(Char c, int indice)
         {
-            if (c == 'd')  // suppression
+            if (c == 'd') // cas de la suppression
             {
-                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce jeux video " + vmodele.DT[5].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur " + vmodele.DT[5].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (rep == DialogResult.Yes)
                 {
                     // on supprime l’élément du DataTable
@@ -220,26 +221,27 @@ namespace PPE3_NotaGame
             }
             else
             {
-                FormCRUDSupport formCRUD = new FormCRUDSupport(c, indice);  // création de la nouvelle forme
+                // cas de l'ajout et modification
+                FormCRUDJeuxvideox formCRUD = new FormCRUDJeuxvideox();  // création de la nouvelle forme
                 if (c == 'c')  // mode ajout donc pas de valeur à passer à la nouvelle forme
                 {
-                    // à écrire : mettre les contrôles de formCRUD à vide
                     formCRUD.TbNom.Clear();
-                    formCRUD.NumAnnee.Value = 2016;
-                    formCRUD.CbConstructeur.SelectedIndex = -1;
-                    formCRUD.TbCaract.Clear();
+                    formCRUD.TbAnne.Clear();
+                    formCRUD.TbClass.Clear();
+                    formCRUD.TbEditeur.Clear();
+                    formCRUD.TbDesc.Clear();
                 }
 
                 if (c == 'u')   // mode update donc on récupère les champs
                 {
                     // on remplit les zones par les valeurs du dataGridView correspondantes
                     formCRUD.TbNom.Text = vmodele.DT[5].Rows[indice][1].ToString();
-                    formCRUD.NumAnnee.Value = Convert.ToInt32(vmodele.DT[5].Rows[indice][5]);
-                    formCRUD.TbCaract.Text = vmodele.DT[5].Rows[indice][5].ToString();
-                    // mise à jour de la comboBox faite avec le nom du constructeur dans le Load de la formCRUD
-                }
+                    formCRUD.TbAnne.Text = vmodele.DT[5].Rows[indice][2].ToString();
+                    formCRUD.TbClass.Text = vmodele.DT[5].Rows[indice][3].ToString();
+                    formCRUD.TbEditeur.Text = vmodele.DT[5].Rows[indice][4].ToString();
+                    formCRUD.TbDesc.Text = vmodele.DT[5].Rows[indice][5].ToString();
 
-            eti:
+                }
                 // on affiche la nouvelle form
                 formCRUD.ShowDialog();
 
@@ -249,37 +251,29 @@ namespace PPE3_NotaGame
                     if (c == 'c') // ajout
                     {
                         // on crée une nouvelle ligne dans le dataView
-                        if (formCRUD.TbNom.Text != "" && formCRUD.CbConstructeur.SelectedIndex != -1)
+                        if (formCRUD.TbNom.Text != "" && formCRUD.TbAnne.Text != "" && formCRUD.TbClass.Text != "" && formCRUD.TbEditeur.Text != "" && formCRUD.TbDesc.Text != "")
                         {
                             DataRow NouvLigne = vmodele.DT[5].NewRow();
-                            NouvLigne["NomS"] = formCRUD.TbNom.Text;
-                            NouvLigne["AnneeSortie"] = formCRUD.NumAnnee.Value;
-                            if (formCRUD.TbCaract.Text != "") NouvLigne["caracteristiques"] = formCRUD.TbCaract.Text;
-                            else NouvLigne["caracteristiques"] = Convert.DBNull;
-
-                            // récupération de l'IDC de la table constructeur correspondant au nom du constructeur sélectionné dans la comboBox
-                            NouvLigne["IdC"] = Convert.ToInt32(vmodele.DT[1].Rows[formCRUD.CbConstructeur.SelectedIndex][0]);
-
+                            NouvLigne["NomJV"] = formCRUD.TbNom.Text;
+                            NouvLigne["anneeSortie"] = Convert.ToInt32(formCRUD.TbAnne.Text);
+                            NouvLigne["classification"] = Convert.ToInt32(formCRUD.TbClass.Text);
+                            NouvLigne["editeur"] = formCRUD.TbEditeur.Text;
+                            NouvLigne["description"] = formCRUD.TbDesc.Text;
                             vmodele.DT[5].Rows.Add(NouvLigne);
                             vmodele.DA[5].Update(vmodele.DT[5]);
                         }
-                        else
-                        {
-                            MessageBox.Show("Sélectionner un nom et un constructeur au minimum", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            // ne pas fermer la form : revenir avant le bouton OK
-                            goto eti;
-                        }
+
                     }
 
                     if (c == 'u')  // modif
                     {
                         // on met à jour le dataTable avec les nouvelles valeurs
-                        vmodele.DT[5].Rows[indice]["NomS"] = formCRUD.TbNom.Text;
-                        vmodele.DT[5].Rows[indice]["AnneeSortie"] = formCRUD.NumAnnee.Value;
-                        if (formCRUD.TbCaract.Text != "") vmodele.DT[5].Rows[indice]["caracteristiques"] = formCRUD.TbCaract.Text;
-                        else vmodele.DT[5].Rows[indice]["caracteristiques"] = Convert.DBNull;
-                        vmodele.DT[5].Rows[indice]["IdC"] = Convert.ToInt32(vmodele.DT[1].Rows[formCRUD.CbConstructeur.SelectedIndex][0]);
-                        vmodele.DA[5].Update(vmodele.DT[3]);
+                        vmodele.DT[5].Rows[indice]["NomJV"] = formCRUD.TbNom.Text;
+                        vmodele.DT[5].Rows[indice]["anneeSortie"] = Convert.ToInt32(formCRUD.TbAnne.Text);
+                        vmodele.DT[5].Rows[indice]["classification"] = Convert.ToInt32(formCRUD.TbClass.Text);
+                        vmodele.DT[5].Rows[indice]["editeur"] = formCRUD.TbEditeur.Text;
+                        vmodele.DT[5].Rows[indice]["description"] = formCRUD.TbDesc.Text;
+                        vmodele.DA[5].Update(vmodele.DT[5]);
                     }
 
                     // MessageBox.Show("OK : données enregistrées Constructeur");
@@ -292,7 +286,165 @@ namespace PPE3_NotaGame
                 }
             }
         }
-        
+
+
+
+        /// <summary>
+        /// permet le crud sur la table Constructeur
+        /// </summary>
+        /// <param name="c">définit l'action : c:create, u update, d delete</param>
+        /// <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
+        public static void crud_Users(Char c, int indice)
+        {
+            if (c == 'd') // cas de la suppression
+            {
+                //   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur " + vmodele.DT[4].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rep == DialogResult.Yes)
+                {
+                    // on supprime l’élément du DataTable
+                    vmodele.DT[4].Rows[indice].Delete();		// suppression dans le DataTable
+                    vmodele.DA[4].Update(vmodele.DT[4]);			// mise à jour du DataAdapter
+                }
+            }
+            else
+            {
+                // cas de l'ajout et modification
+                FormCRUDUsers formCRUD = new FormCRUDUsers(); // création de la nouvelle forme
+                if (c == 'c')  // mode ajout donc pas de valeur à passer à la nouvelle forme
+                {
+                    formCRUD.TbEmail.Clear();
+                    formCRUD.TbPseudo.Clear();
+                    formCRUD.TbComm.Clear();
+                }
+
+                if (c == 'u')   // mode update donc on récupère les champs
+                {
+                    // on remplit les zones par les valeurs du dataGridView correspondantes
+                    formCRUD.TbEmail.Text = vmodele.DT[4].Rows[indice][1].ToString();
+                    formCRUD.TbPseudo.Text = vmodele.DT[4].Rows[indice][2].ToString();
+                    formCRUD.TbComm.Text = vmodele.DT[4].Rows[indice][3].ToString();
+
+                }
+                // on affiche la nouvelle form
+                formCRUD.ShowDialog();
+
+                // si l’utilisateur clique sur OK
+                if (formCRUD.DialogResult == DialogResult.OK)
+                {
+                    if (c == 'c') // ajout
+                    {
+                        // on crée une nouvelle ligne dans le dataView
+                        if (formCRUD.TbEmail.Text != "" && formCRUD.TbPseudo.Text != "" && formCRUD.TbComm.Text != "")
+                        {
+                            DataRow NouvLigne = vmodele.DT[4].NewRow();
+                            NouvLigne["email"] = formCRUD.TbEmail.Text;
+                            NouvLigne["pseudo"] = formCRUD.TbPseudo.Text;
+                            NouvLigne["communaute"] = formCRUD.TbComm.Text;
+                            vmodele.DT[4].Rows.Add(NouvLigne);
+                            vmodele.DA[4].Update(vmodele.DT[4]);
+                        }
+
+                    }
+
+                    if (c == 'u')  // modif
+                    {
+                        // on met à jour le dataTable avec les nouvelles valeurs
+                        vmodele.DT[4].Rows[indice]["email"] = formCRUD.TbEmail.Text;
+                        vmodele.DT[4].Rows[indice]["pseudo"] = formCRUD.TbPseudo.Text;
+                        vmodele.DT[4].Rows[indice]["communaute"] = formCRUD.TbComm.Text;
+                        vmodele.DA[4].Update(vmodele.DT[4]);
+                    }
+
+                    // MessageBox.Show("OK : données enregistrées Constructeur");
+                    formCRUD.Dispose();  // on ferme la form
+                }
+                else
+                {
+                    MessageBox.Show("Annulation : aucune donnée enregistrée");
+                    formCRUD.Dispose();
+                }
+            }
+        }
+
+
+
+        /// <summary>
+        /// permet le crud sur la table Constructeur
+        /// </summary>
+        /// <param name="c">définit l'action : c:create, u update, d delete</param>
+        /// <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
+        public static void crud_compatible(Char c, int indice)
+        {
+            if (c == 'd') // cas de la suppression
+            {
+                //   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur " + vmodele.DT[6].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rep == DialogResult.Yes)
+                {
+                    // on supprime l’élément du DataTable
+                    vmodele.DT[6].Rows[indice].Delete();		// suppression dans le DataTable
+                    vmodele.DA[6].Update(vmodele.DT[6]);			// mise à jour du DataAdapter
+                }
+            }
+            else
+            {
+                // cas de l'ajout et modification
+                FormCRUDCompatible formCRUD = new FormCRUDCompatible(); // création de la nouvelle forme
+                if (c == 'c')  // mode ajout donc pas de valeur à passer à la nouvelle forme
+                {
+                    formCRUD.TbSupport.Clear();
+                    formCRUD.TbJeux.Clear();
+                }
+
+                if (c == 'u')   // mode update donc on récupère les champs
+                {
+                    // on remplit les zones par les valeurs du dataGridView correspondantes
+                    formCRUD.TbJeux.Text = vmodele.DT[6].Rows[indice][0].ToString();
+                    formCRUD.TbSupport.Text = vmodele.DT[6].Rows[indice][1].ToString();
+
+                }
+                // on affiche la nouvelle form
+                formCRUD.ShowDialog();
+
+                // si l’utilisateur clique sur OK
+                if (formCRUD.DialogResult == DialogResult.OK)
+                {
+                    if (c == 'c') // ajout
+                    {
+                        // on crée une nouvelle ligne dans le dataView
+                        if (formCRUD.TbSupport.Text != "" && formCRUD.TbJeux.Text != "")
+                        {
+                            DataRow NouvLigne = vmodele.DT[6].NewRow();
+                            NouvLigne["idJV"] = Convert.ToInt32(formCRUD.TbJeux.Text);
+                            NouvLigne["idS"] = Convert.ToInt32(formCRUD.TbSupport.Text);
+                            vmodele.DT[6].Rows.Add(NouvLigne);
+                            vmodele.DA[6].Update(vmodele.DT[6]);
+                        }
+
+                    }
+
+                    if (c == 'u')  // modif
+                    {
+                        // on met à jour le dataTable avec les nouvelles valeurs
+                        vmodele.DT[6].Rows[indice]["idJV"] = Convert.ToInt32(formCRUD.TbJeux.Text);
+                        vmodele.DT[6].Rows[indice]["idS"] = Convert.ToInt32(formCRUD.TbSupport.Text);
+                        vmodele.DA[6].Update(vmodele.DT[6]);
+                    }
+
+                    // MessageBox.Show("OK : données enregistrées Constructeur");
+                    formCRUD.Dispose();  // on ferme la form
+                }
+                else
+                {
+                    MessageBox.Show("Annulation : aucune donnée enregistrée");
+                    formCRUD.Dispose();
+                }
+            }
+        }
+
+
+
 
     }
 }

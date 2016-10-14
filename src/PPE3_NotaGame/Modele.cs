@@ -12,7 +12,7 @@ namespace PPE3_NotaGame
     /// <summary>
     /// Classe Modele gérant la connexion et gestion avec la BD "bd_ppe3_notagame"
     /// </summary>
-     public class Modele 
+    public class Modele
     {
         #region propriétés
 
@@ -28,35 +28,35 @@ namespace PPE3_NotaGame
         // indice 3 : Table Support
 
         // collection de DataAdapter
-        private List<MySqlDataAdapter> dA = new List<MySqlDataAdapter>(); 
-    
+        private List<MySqlDataAdapter> dA = new List<MySqlDataAdapter>();
+
         // collection de DataTable récupérant les données correspond au DA associé
         private List<DataTable> dT = new List<DataTable>();
 
         #endregion
 
         #region accesseurs
-         /// <summary>
-         /// test si la connexion à la BD est ouverte
-         /// </summary>
+        /// <summary>
+        /// test si la connexion à la BD est ouverte
+        /// </summary>
         public bool Connopen
         {
             get { return connopen; }
             set { connopen = value; }
         }
 
-         /// <summary>
-         /// test si erreur lors de la connexion
-         /// </summary>
+        /// <summary>
+        /// test si erreur lors de la connexion
+        /// </summary>
         public bool Errgrave
         {
             get { return errgrave; }
             set { errgrave = value; }
         }
-     
-         /// <summary>
+
+        /// <summary>
         /// test si le chargement d'une requête est fait
-         /// </summary>
+        /// </summary>
         public bool Chargement
         {
             get { return chargement; }
@@ -71,7 +71,7 @@ namespace PPE3_NotaGame
             get { return dA; }
             set { dA = value; }
         }
-  
+
         /// <summary>
         /// Accesseur de la collection des DataTable
         /// </summary>
@@ -89,7 +89,8 @@ namespace PPE3_NotaGame
         /// indice 2 : Table Support avec jointure pour récupérer tous les libellés
         /// indice 3 : Table Support
         /// </summary>
-        public Modele() {
+        public Modele()
+        {
 
             for (int i = 0; i < 8; i++)
             {
@@ -103,7 +104,7 @@ namespace PPE3_NotaGame
         /// </summary>
         public void seconnecter()
         {
-            string myConnectionString = "Database=bd_ppe3_notagame;Data Source=192.168.165.3;User Id=distant;Password=;";
+            string myConnectionString = "Database=bd_ppe3_notagame;Data Source=192.168.165.4;User Id=bd_ppe3_notagame;Password=root;";
             myConnection = new MySqlConnection(myConnectionString);
             try // tentative 
             {
@@ -196,9 +197,12 @@ namespace PPE3_NotaGame
             }
             if (table == "compatible")
             {
-                charger("select nomS, nomJV from compatible C inner join jeuxvideos J on C.IDJV = J.IDJV inner join support S on S.IDS = C.IDS", dT[6], dA[6]);
+                charger("select * from compatible", dT[6], dA[6]);
+                //charger("select idS, nomS, nomJV, idJV from compatible C inner join jeuxvideos J on C.IDJV = J.IDJV inner join support S on S.IDS = C.IDS", dT[6], dA[6]);
             }
-         
+
+
+
         }
     }
 }

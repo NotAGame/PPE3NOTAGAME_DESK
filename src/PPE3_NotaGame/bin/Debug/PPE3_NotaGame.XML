@@ -33,6 +33,44 @@
             <param name="c">définit l'action : c:create, u update, d delete </param>
             <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
         </member>
+        <member name="M:PPE3_NotaGame.Controleur.crud_Jeuxvideo(System.Char,System.Int32)">
+            <summary>
+            permet le crud sur la table Constructeur
+            </summary>
+            <param name="c">définit l'action : c:create, u update, d delete</param>
+            <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
+        </member>
+        <member name="M:PPE3_NotaGame.Controleur.crud_Users(System.Char,System.Int32)">
+            <summary>
+            permet le crud sur la table Constructeur
+            </summary>
+            <param name="c">définit l'action : c:create, u update, d delete</param>
+            <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
+        </member>
+        <member name="M:PPE3_NotaGame.Controleur.crud_compatible(System.Char,System.Int32)">
+            <summary>
+            permet le crud sur la table Constructeur
+            </summary>
+            <param name="c">définit l'action : c:create, u update, d delete</param>
+            <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
+        </member>
+        <member name="F:PPE3_NotaGame.FormCRUDCompatible.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDCompatible.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDCompatible.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:PPE3_NotaGame.FormCRUDConstructeur">
             <summary>
             FormCRUDConstructeur : feuille qui permet la gestion Ajout/modification d'un constructeur de jeux vidéos
@@ -63,6 +101,23 @@
         <member name="P:PPE3_NotaGame.FormCRUDConstructeur.TbNom">
             <summary>
             propriété TbNom de type TextBox : Nom du constructeur
+            </summary>
+        </member>
+        <member name="F:PPE3_NotaGame.FormCRUDJeuxvideox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDJeuxvideox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDJeuxvideox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:PPE3_NotaGame.FormCRUDSupport">
@@ -119,6 +174,23 @@
         <member name="P:PPE3_NotaGame.FormCRUDSupport.TbCaract">
             <summary>
             propriété TbCaract de type TextBox : caractéristiques du support
+            </summary>
+        </member>
+        <member name="F:PPE3_NotaGame.FormCRUDUsers.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDUsers.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDUsers.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:PPE3_NotaGame.FormGestion">

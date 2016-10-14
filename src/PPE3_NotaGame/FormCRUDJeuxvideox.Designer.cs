@@ -29,113 +29,158 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.TbNom = new System.Windows.Forms.TextBox();
+            this.TbDesc = new System.Windows.Forms.TextBox();
+            this.TbClass = new System.Windows.Forms.TextBox();
+            this.TbEditeur = new System.Windows.Forms.TextBox();
+            this.TbEdit = new System.Windows.Forms.Label();
+            this.TbAnne = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(113, 153);
+            this.label1.Location = new System.Drawing.Point(75, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 17);
+            this.label1.Size = new System.Drawing.Size(112, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nom jeux vidéo";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(245, 150);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(246, 241);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 2;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(256, 326);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 3;
+            this.label1.Text = "Nom jeux vidéo :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 332);
+            this.label2.Location = new System.Drawing.Point(89, 200);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 17);
+            this.label2.Size = new System.Drawing.Size(98, 17);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Classification";
+            this.label2.Text = "Classification :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(116, 245);
+            this.label3.Location = new System.Drawing.Point(91, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 17);
+            this.label3.Size = new System.Drawing.Size(96, 17);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Année sortie";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(246, 438);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 6;
+            this.label3.Text = "Année sortie :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(119, 438);
+            this.label4.Location = new System.Drawing.Point(89, 302);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 17);
+            this.label4.Size = new System.Drawing.Size(87, 17);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Description";
+            this.label4.Text = "Description :";
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAnnuler.Location = new System.Drawing.Point(288, 422);
+            this.btnAnnuler.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(100, 28);
+            this.btnAnnuler.TabIndex = 15;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            // 
+            // btnOK
+            // 
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOK.Location = new System.Drawing.Point(99, 422);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(100, 28);
+            this.btnOK.TabIndex = 14;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            // 
+            // TbNom
+            // 
+            this.TbNom.Location = new System.Drawing.Point(192, 40);
+            this.TbNom.Name = "TbNom";
+            this.TbNom.Size = new System.Drawing.Size(121, 22);
+            this.TbNom.TabIndex = 16;
+            // 
+            // TbDesc
+            // 
+            this.TbDesc.Location = new System.Drawing.Point(193, 302);
+            this.TbDesc.Multiline = true;
+            this.TbDesc.Name = "TbDesc";
+            this.TbDesc.Size = new System.Drawing.Size(136, 96);
+            this.TbDesc.TabIndex = 17;
+            // 
+            // TbClass
+            // 
+            this.TbClass.Location = new System.Drawing.Point(192, 195);
+            this.TbClass.Name = "TbClass";
+            this.TbClass.Size = new System.Drawing.Size(121, 22);
+            this.TbClass.TabIndex = 18;
+            // 
+            // TbEditeur
+            // 
+            this.TbEditeur.Location = new System.Drawing.Point(192, 247);
+            this.TbEditeur.Name = "TbEditeur";
+            this.TbEditeur.Size = new System.Drawing.Size(121, 22);
+            this.TbEditeur.TabIndex = 19;
+            // 
+            // TbEdit
+            // 
+            this.TbEdit.AutoSize = true;
+            this.TbEdit.Location = new System.Drawing.Point(91, 250);
+            this.TbEdit.Name = "TbEdit";
+            this.TbEdit.Size = new System.Drawing.Size(60, 17);
+            this.TbEdit.TabIndex = 20;
+            this.TbEdit.Text = "éditeur :";
+            // 
+            // TbAnne
+            // 
+            this.TbAnne.Location = new System.Drawing.Point(194, 127);
+            this.TbAnne.Name = "TbAnne";
+            this.TbAnne.Size = new System.Drawing.Size(119, 22);
+            this.TbAnne.TabIndex = 21;
             // 
             // FormCRUDJeuxvideox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 544);
+            this.ClientSize = new System.Drawing.Size(500, 522);
+            this.Controls.Add(this.TbAnne);
+            this.Controls.Add(this.TbEdit);
+            this.Controls.Add(this.TbEditeur);
+            this.Controls.Add(this.TbClass);
+            this.Controls.Add(this.TbDesc);
+            this.Controls.Add(this.TbNom);
+            this.Controls.Add(this.btnAnnuler);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Name = "FormCRUDJeuxvideox";
             this.Text = "FormCRUDJeuxvideox";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.Button btnOK;
+        public System.Windows.Forms.TextBox TbNom;
+        public System.Windows.Forms.TextBox TbDesc;
+        public System.Windows.Forms.TextBox TbClass;
+        private System.Windows.Forms.Label TbEdit;
+        public System.Windows.Forms.TextBox TbEditeur;
+        public System.Windows.Forms.TextBox TbAnne;
     }
 }
