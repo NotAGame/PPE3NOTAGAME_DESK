@@ -211,7 +211,7 @@ namespace PPE3_NotaGame
             if (c == 'd') // cas de la suppression
             {
                 //   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur " + vmodele.DT[5].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce jeu vidéo " + vmodele.DT[5].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (rep == DialogResult.Yes)
                 {
                     // on supprime l’élément du DataTable
@@ -299,7 +299,7 @@ namespace PPE3_NotaGame
             if (c == 'd') // cas de la suppression
             {
                 //   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur " + vmodele.DT[4].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer cet utilisateur " + vmodele.DT[4].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (rep == DialogResult.Yes)
                 {
                     // on supprime l’élément du DataTable
@@ -379,13 +379,15 @@ namespace PPE3_NotaGame
             if (c == 'd') // cas de la suppression
             {
                 //   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur " + vmodele.DT[6].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer cette compatibilité " + vmodele.DT[6].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (rep == DialogResult.Yes)
                 {
                     // on supprime l’élément du DataTable
                     vmodele.DT[6].Rows[indice].Delete();		// suppression dans le DataTable
-                    vmodele.DA[6].Update(vmodele.DT[6]);			// mise à jour du DataAdapter
-                }
+                    vmodele.DA[6].Update(vmodele.DT[6]);            // mise à jour du DataAdapter
+					vmodele.DT[7].Rows[indice].Delete();        // suppression dans le DataTable
+					vmodele.DA[7].Update(vmodele.DT[7]);            // mise à jour du DataAdapter
+				}
             }
             else
             {
@@ -444,8 +446,67 @@ namespace PPE3_NotaGame
             }
         }
 
+		/// <summary>
+		/// permet le crud sur la table genre
+		/// </summary>
+		/// <param name="c">définit l'action : c:create, u update, d delete</param>
+		/// <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
+		public static void crud_genre(Char c, int indice)
+		{
+			if (c == 'd') // cas de la suppression
+			{
+				//   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce genre " + vmodele.DT[7].Rows[indice][1].ToString() + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (rep == DialogResult.Yes)
+				{
+					// on supprime l’élément du DataTable
+					vmodele.DT[8].Rows[indice].Delete();        // suppression dans le DataTable
+					vmodele.DA[8].Update(vmodele.DT[8]);            // mise à jour du DataAdapter
+				}
+			}
+			else
+			{
+				// cas de l'ajout et modification
+				FormCRUDGenre formCRUD = new FormCRUDGenre();  // création de la nouvelle forme
+				if (c == 'u')   // mode update donc on récupère les champs
+				{
+					// on remplit les zones par les valeurs du dataGridView correspondantes
+					formCRUD.TbLibelle.Text = vmodele.DT[7].Rows[indice][1].ToString();
+				}
+				// on affiche la nouvelle form
+				formCRUD.ShowDialog();
 
+				// si l’utilisateur clique sur OK
+				if (formCRUD.DialogResult == DialogResult.OK)
+				{
+					if (c == 'c') // ajout
+					{
+						// on crée une nouvelle ligne dans le dataView
+						if (!string.IsNullOrWhiteSpace(formCRUD.TbLibelle.Text))
+						{
+							DataRow NouvLigne = vmodele.DT[8].NewRow();
+							NouvLigne["libelle"] = formCRUD.TbLibelle.Text;
+							vmodele.DT[8].Rows.Add(NouvLigne);
+							vmodele.DA[8].Update(vmodele.DT[8]);
+						}
+					}
 
+					if (c == 'u')  // modif
+					{
+						// on met à jour le dataTable avec les nouvelles valeurs
+						vmodele.DT[8].Rows[indice]["libelle"] = formCRUD.TbLibelle.Text;
+						vmodele.DA[8].Update(vmodele.DT[8]);
+					}
 
-    }
+					// MessageBox.Show("OK : données enregistrées Constructeur");
+					formCRUD.Dispose();  // on ferme la form
+				}
+				else
+				{
+					MessageBox.Show("Annulation : aucune donnée enregistrée");
+					formCRUD.Dispose();
+				}
+			}
+		}
+	}
 }

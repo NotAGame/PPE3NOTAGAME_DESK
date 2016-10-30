@@ -60,6 +60,12 @@
     <Compile Include="FormCRUDConstructeur.designer.cs">
       <DependentUpon>FormCRUDConstructeur.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCRUDGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCRUDGenre.Designer.cs">
+      <DependentUpon>FormCRUDGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCRUDJeuxvideox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCRUDConstructeur.resx">
       <DependentUpon>FormCRUDConstructeur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCRUDGenre.resx">
+      <DependentUpon>FormCRUDGenre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCRUDJeuxvideox.resx">
       <DependentUpon>FormCRUDJeuxvideox.cs</DependentUpon>

@@ -105,9 +105,16 @@ namespace PPE3_NotaGame
                         dGvJeux.DataSource = bindingSource1;
                         dGvJeux.Columns["IDJV"].HeaderText = "Id Jeux videos";
                         dGvJeux.Columns["IDS"].HeaderText = "Id Support";
-                        //dGvJeux.Columns["NOMJV"].HeaderText = "Nom Jeux videos";
-                        //dGvJeux.Columns["NOMS"].HeaderText = "Nom Support";
+                        dGvJeux.Columns["NOMJV"].HeaderText = "Nom Jeux videos";
+                        dGvJeux.Columns["NOMS"].HeaderText = "Nom Support";
                     }
+					else if (table == "genre")
+					{
+						bindingSource1.DataSource = Controleur.Vmodele.DT[8];
+						dGvJeux.DataSource = bindingSource1;
+						dGvJeux.Columns["id"].HeaderText = "Id";
+						dGvJeux.Columns["libelle"].HeaderText = "Libellé";
+					}
 
                     // mise à jour du dataGridView via le bindingSource rempli par le DataTable
                     dGvJeux.Refresh();
@@ -142,7 +149,7 @@ namespace PPE3_NotaGame
                 if (table == "jeuxvideos") Controleur.crud_Jeuxvideo('c', -1);
                 if (table == "users") Controleur.crud_Users('c', -1);
                 if (table == "compatible") Controleur.crud_compatible('c', -1);
-
+				if (table == "genre") Controleur.crud_genre('c', -1);
             }
             else
             {
@@ -159,6 +166,7 @@ namespace PPE3_NotaGame
                         if (table == "jeuxvideos") Controleur.crud_Jeuxvideo('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "users") Controleur.crud_Users('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "compatible") Controleur.crud_compatible('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+						if (table == "genre") Controleur.crud_genre('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                     }
                     if (sender == supprimerToolStripMenuItem)
                     {
@@ -170,6 +178,7 @@ namespace PPE3_NotaGame
                         if (table == "jeuxvideos") Controleur.crud_Jeuxvideo('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "users") Controleur.crud_Users('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "compatible") Controleur.crud_compatible('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+						if (table == "genre") Controleur.crud_genre('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                     }
                    
                 }
