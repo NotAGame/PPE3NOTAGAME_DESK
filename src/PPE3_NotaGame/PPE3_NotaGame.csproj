@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controleur.cs" />
+    <Compile Include="FormCRUDClasser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCRUDClasser.Designer.cs">
+      <DependentUpon>FormCRUDClasser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCRUDCompatible.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Modele.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCRUDClasser.resx">
+      <DependentUpon>FormCRUDClasser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCRUDCompatible.resx">
       <DependentUpon>FormCRUDCompatible.cs</DependentUpon>
     </EmbeddedResource>

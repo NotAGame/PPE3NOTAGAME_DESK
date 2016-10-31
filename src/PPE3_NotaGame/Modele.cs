@@ -92,7 +92,7 @@ namespace PPE3_NotaGame
         public Modele()
         {
 
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 11; i++)
             {
                 dA.Add(new MySqlDataAdapter());
                 dT.Add(new DataTable());
@@ -206,6 +206,13 @@ namespace PPE3_NotaGame
 			{
 				charger("select * from genre", DT[8], dA[8]);
 			}
-        }
+			if (table == "classer")
+			{
+				charger("select * from jeuxvideos", dT[5], dA[5]);
+				charger("select * from genre", DT[8], dA[8]);
+				charger("select c.idjv, idg, nomjv, libelle from classer c inner join jeuxvideos j on (c.idjv = j.idjv) inner join genre on (idg = id)", dT[9], DA[9]);
+				charger("select * from classer", dT[10], DA[10]);
+			}
+		}
     }
 }

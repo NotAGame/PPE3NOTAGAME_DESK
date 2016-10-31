@@ -509,5 +509,79 @@ namespace PPE3_NotaGame
 				}
 			}
 		}
+
+		/// <summary>
+		/// permet le crud sur la table classer
+		/// </summary>
+		/// <param name="c">définit l'action : c:create, u update, d delete</param>
+		/// <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
+		public static void crud_classer(Char c, int indice)
+		{
+			if (c == 'd') // cas de la suppression
+			{
+				//   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce classement " + vmodele.DT[9].Rows[indice][2].ToString() + " de genre " + vmodele.DT[9].Rows[indice][3].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (rep == DialogResult.Yes)
+				{
+					// on supprime l’élément du DataTable
+					vmodele.DT[10].Rows[indice].Delete();        // suppression dans le DataTable
+					vmodele.DA[10].Update(vmodele.DT[10]);            // mise à jour du DataAdapter
+				}
+			}
+			else
+			{
+				// cas de l'ajout et modification
+				FormCRUDClasser formCRUD = new FormCRUDClasser(); // création de la nouvelle forme
+																		// On remplit les ComboBox avec les noms des supports et des jeux.
+				foreach (DataRow row in vmodele.DT[5].Rows)
+					formCRUD.CbxJeux.Items.Add(row[1].ToString());
+				foreach (DataRow row in vmodele.DT[8].Rows)
+					formCRUD.CbxGenres.Items.Add(row[1].ToString());
+				if (c == 'u')   // mode update donc on récupère les champs
+				{
+					// on remplit les zones par les valeurs du dataGridView correspondantes
+					formCRUD.CbxJeux.SelectedIndex = Convert.ToInt32(vmodele.DT[10].Rows[indice][0]) - 1;
+					formCRUD.CbxGenres.SelectedIndex = Convert.ToInt32(vmodele.DT[10].Rows[indice][1]) - 1;
+
+				}
+				// on affiche la nouvelle form
+				formCRUD.ShowDialog();
+
+				// si l’utilisateur clique sur OK
+				if (formCRUD.DialogResult == DialogResult.OK)
+				{
+
+					if (c == 'c') // ajout
+					{
+						// on crée une nouvelle ligne dans le dataView
+						if (formCRUD.CbxJeux.SelectedIndex >= 0 && formCRUD.CbxGenres.SelectedIndex >= 0)
+						{
+							DataRow NouvLigne = vmodele.DT[10].NewRow();
+							NouvLigne["idjv"] = formCRUD.CbxJeux.SelectedIndex + 1;
+							NouvLigne["idg"] = formCRUD.CbxGenres.SelectedIndex + 1;
+							vmodele.DT[10].Rows.Add(NouvLigne);
+							vmodele.DA[10].Update(vmodele.DT[10]);
+						}
+
+					}
+
+					if (c == 'u')  // modif
+					{
+						// on met à jour le dataTable avec les nouvelles valeurs
+						vmodele.DT[10].Rows[indice]["idjv"] = formCRUD.CbxJeux.SelectedIndex + 1;
+						vmodele.DT[10].Rows[indice]["idg"] = formCRUD.CbxGenres.SelectedIndex + 1;
+						vmodele.DA[10].Update(vmodele.DT[10]);
+					}
+
+					// MessageBox.Show("OK : données enregistrées Constructeur");
+					formCRUD.Dispose();  // on ferme la form
+				}
+				else
+				{
+					MessageBox.Show("Annulation : aucune donnée enregistrée");
+					formCRUD.Dispose();
+				}
+			}
+		}
 	}
 }

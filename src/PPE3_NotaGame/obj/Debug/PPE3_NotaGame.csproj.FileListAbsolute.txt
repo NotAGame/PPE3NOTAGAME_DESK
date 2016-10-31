@@ -85,3 +85,4 @@ C:\Users\Arnold\Source\Repos\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_
 C:\Users\Arnold\Source\Repos\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.Properties.Resources.resources
 C:\Users\Arnold\Source\Repos\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csproj.GenerateResource.Cache
 C:\Users\Arnold\Source\Repos\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\MySql.Data.dll
+C:\Users\Arnold\Source\Repos\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDClasser.resources

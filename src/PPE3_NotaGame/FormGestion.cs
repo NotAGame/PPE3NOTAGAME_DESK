@@ -93,7 +93,7 @@ namespace PPE3_NotaGame
                         bindingSource1.DataSource = Controleur.Vmodele.DT[5];
                         dGvJeux.DataSource = bindingSource1;
                         dGvJeux.Columns["IDJV"].HeaderText = "Id Jeux videos";
-                        dGvJeux.Columns["NOMJV"].HeaderText = "Nom Jeux vieos";
+                        dGvJeux.Columns["NOMJV"].HeaderText = "Nom Jeux videos";
                         dGvJeux.Columns["ANNEESORTIE"].HeaderText = "Annee Sortie";
                         dGvJeux.Columns["CLASSIFICATION"].HeaderText = "Classification";
                         dGvJeux.Columns["EDITEUR"].HeaderText = "Editeur";
@@ -115,9 +115,18 @@ namespace PPE3_NotaGame
 						dGvJeux.Columns["id"].HeaderText = "Id";
 						dGvJeux.Columns["libelle"].HeaderText = "Libellé";
 					}
+					else if (table == "classer")
+					{
+						bindingSource1.DataSource = Controleur.Vmodele.DT[9];
+						dGvJeux.DataSource = bindingSource1;
+						dGvJeux.Columns["idjv"].HeaderText = "Id jeu";
+						dGvJeux.Columns["idg"].HeaderText = "Id genre";
+						dGvJeux.Columns["nomjv"].HeaderText = "Nom jeu";
+						dGvJeux.Columns["libelle"].HeaderText = "Libellé genre";
+					}
 
-                    // mise à jour du dataGridView via le bindingSource rempli par le DataTable
-                    dGvJeux.Refresh();
+					// mise à jour du dataGridView via le bindingSource rempli par le DataTable
+					dGvJeux.Refresh();
                     dGvJeux.Visible = true;
                 }
                 else
@@ -150,7 +159,8 @@ namespace PPE3_NotaGame
                 if (table == "users") Controleur.crud_Users('c', -1);
                 if (table == "compatible") Controleur.crud_compatible('c', -1);
 				if (table == "genre") Controleur.crud_genre('c', -1);
-            }
+				if (table == "classer") Controleur.crud_classer('c', -1);
+			}
             else
             {
                 // vérifier qu’une ligne est bien sélectionnée dans le dataGridView
@@ -167,7 +177,8 @@ namespace PPE3_NotaGame
                         if (table == "users") Controleur.crud_Users('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "compatible") Controleur.crud_compatible('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "genre") Controleur.crud_genre('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
-                    }
+						if (table == "classer") Controleur.crud_classer('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+					}
                     if (sender == supprimerToolStripMenuItem)
                     {
                         // appel de la méthode du controleur en mode update et avec la valeur de CodeFilm du film en clé
@@ -179,7 +190,8 @@ namespace PPE3_NotaGame
                         if (table == "users") Controleur.crud_Users('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "compatible") Controleur.crud_compatible('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "genre") Controleur.crud_genre('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
-                    }
+						if (table == "classer") Controleur.crud_classer('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+					}
                    
                 }
                 else
