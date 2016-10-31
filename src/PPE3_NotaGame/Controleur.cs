@@ -379,12 +379,10 @@ namespace PPE3_NotaGame
             if (c == 'd') // cas de la suppression
             {
                 //   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer cette compatibilité " + vmodele.DT[6].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer cette compatibilité " + vmodele.DT[6].Rows[indice][2].ToString() + " sur " + vmodele.DT[6].Rows[indice][1].ToString() + " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (rep == DialogResult.Yes)
                 {
                     // on supprime l’élément du DataTable
-                    vmodele.DT[6].Rows[indice].Delete();		// suppression dans le DataTable
-                    vmodele.DA[6].Update(vmodele.DT[6]);            // mise à jour du DataAdapter
 					vmodele.DT[7].Rows[indice].Delete();        // suppression dans le DataTable
 					vmodele.DA[7].Update(vmodele.DT[7]);            // mise à jour du DataAdapter
 				}
@@ -393,19 +391,22 @@ namespace PPE3_NotaGame
             {
                 // cas de l'ajout et modification
                 FormCRUDCompatible formCRUD = new FormCRUDCompatible(); // création de la nouvelle forme
-                if (c == 'c')  // mode ajout donc pas de valeur à passer à la nouvelle forme
+				// On remplit les ComboBox avec les noms des supports et des jeux.
+				foreach (DataRow row in vmodele.DT[5].Rows)
+					formCRUD.CbxJeux.Items.Add(row[1].ToString());
+				foreach (DataRow row in vmodele.DT[3].Rows)
+					formCRUD.CbxSupports.Items.Add(row[2].ToString());
+				if (c == 'c')  // mode ajout donc pas de valeur à passer à la nouvelle forme
                 {
-                    formCRUD.TbSupport.Clear();
-                    formCRUD.TbJeux.Clear();
                 }
 
                 if (c == 'u')   // mode update donc on récupère les champs
                 {
-                    // on remplit les zones par les valeurs du dataGridView correspondantes
-                    formCRUD.TbJeux.Text = vmodele.DT[6].Rows[indice][0].ToString();
-                    formCRUD.TbSupport.Text = vmodele.DT[6].Rows[indice][1].ToString();
+					// on remplit les zones par les valeurs du dataGridView correspondantes
+					formCRUD.CbxJeux.SelectedIndex = Convert.ToInt32(vmodele.DT[7].Rows[indice][0]) - 1;
+                    formCRUD.CbxSupports.SelectedIndex = Convert.ToInt32(vmodele.DT[7].Rows[indice][1]) - 1;
 
-                }
+				}
                 // on affiche la nouvelle form
                 formCRUD.ShowDialog();
 
@@ -416,23 +417,23 @@ namespace PPE3_NotaGame
                     if (c == 'c') // ajout
                     {
                         // on crée une nouvelle ligne dans le dataView
-                        if (formCRUD.TbSupport.Text != "" && formCRUD.TbJeux.Text != "")
+                        if (formCRUD.CbxJeux.SelectedIndex >= 0 && formCRUD.CbxSupports.SelectedIndex >= 0)
                         {
-                            DataRow NouvLigne = vmodele.DT[6].NewRow();
-                            NouvLigne["idJV"] = Convert.ToInt32(formCRUD.TbJeux.Text);
-                            NouvLigne["idS"] = Convert.ToInt32(formCRUD.TbSupport.Text);
-                            vmodele.DT[6].Rows.Add(NouvLigne);
-                            vmodele.DA[6].Update(vmodele.DT[6]);
+                            DataRow NouvLigne = vmodele.DT[7].NewRow();
+							NouvLigne["idJV"] = formCRUD.CbxJeux.SelectedIndex + 1;
+							NouvLigne["idS"] = formCRUD.CbxSupports.SelectedIndex + 1;
+                            vmodele.DT[7].Rows.Add(NouvLigne);
+                            vmodele.DA[7].Update(vmodele.DT[7]);
                         }
 
                     }
 
                     if (c == 'u')  // modif
                     {
-                        // on met à jour le dataTable avec les nouvelles valeurs
-                        vmodele.DT[6].Rows[indice]["idJV"] = Convert.ToInt32(formCRUD.TbJeux.Text);
-                        vmodele.DT[6].Rows[indice]["idS"] = Convert.ToInt32(formCRUD.TbSupport.Text);
-                        vmodele.DA[6].Update(vmodele.DT[6]);
+						// on met à jour le dataTable avec les nouvelles valeurs
+						vmodele.DT[7].Rows[indice]["idJV"] = formCRUD.CbxJeux.SelectedIndex + 1;
+						vmodele.DT[7].Rows[indice]["idS"] = formCRUD.CbxSupports.SelectedIndex + 1;
+                        vmodele.DA[7].Update(vmodele.DT[7]);
                     }
 
                     // MessageBox.Show("OK : données enregistrées Constructeur");
