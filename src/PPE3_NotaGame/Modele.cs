@@ -202,14 +202,14 @@ namespace PPE3_NotaGame
 				charger("select S.idS, nomS, nomJV, J.idJV from compatible C inner join jeuxvideos J on C.IDJV = J.IDJV inner join support S on S.IDS = C.IDS", dT[6], dA[6]);
 				charger("select * from compatible", dT[7], dA[7]);
 			}
-			if (table == "genre")
+			if (table == "genres")
 			{
-				charger("select * from genre", DT[8], dA[8]);
+				charger("select * from genres", DT[8], dA[8]);
 			}
 			if (table == "classer")
 			{
 				charger("select * from jeuxvideos", dT[5], dA[5]);
-				charger("select * from genre", DT[8], dA[8]);
+				charger("select * from genres", DT[8], dA[8]);
 				charger("select c.idjv, idg, nomjv, libelle from classer c inner join jeuxvideos j on (c.idjv = j.idjv) inner join genre on (idg = id)", dT[9], DA[9]);
 				charger("select * from classer", dT[10], DA[10]);
 			}

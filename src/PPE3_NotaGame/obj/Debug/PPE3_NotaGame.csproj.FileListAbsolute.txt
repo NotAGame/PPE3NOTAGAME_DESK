@@ -86,3 +86,25 @@ C:\Users\Arnold\Source\Repos\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_
 C:\Users\Arnold\Source\Repos\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csproj.GenerateResource.Cache
 C:\Users\Arnold\Source\Repos\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\MySql.Data.dll
 C:\Users\Arnold\Source\Repos\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDClasser.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.config
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.XML
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.exe
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.pdb
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.pdb
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.CodeAnalysisLog.xml
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.lastcodeanalysissucceeded
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\bin\Debug\MySql.Data.dll
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\bin\Debug\MySql.Data.xml
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csprojResolveAssemblyReference.cache
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDClasser.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDCompatible.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDConstructeur.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDGenre.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDJeuxvideox.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDSupport.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDUsers.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormGestion.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormPrincipale.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.Properties.Resources.resources
+C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csproj.GenerateResource.Cache

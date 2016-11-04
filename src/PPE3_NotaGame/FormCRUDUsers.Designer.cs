@@ -124,6 +124,7 @@
             this.Controls.Add(this.btnOK);
             this.Name = "FormCRUDUsers";
             this.Text = "FormCRUDUsers";
+            this.Load += new System.EventHandler(this.FormCRUDUsers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

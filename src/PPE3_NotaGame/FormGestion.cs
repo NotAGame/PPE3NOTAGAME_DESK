@@ -86,7 +86,7 @@ namespace PPE3_NotaGame
                         dGvJeux.Columns["IDU"].HeaderText = "Id Users";
                         dGvJeux.Columns["EMAIL"].HeaderText = "email";
                         dGvJeux.Columns["PSEUDO"].HeaderText = "pseudo";
-                        dGvJeux.Columns["COMMUNAUTE"].HeaderText = "communaute";
+                        dGvJeux.Columns["IDCOMMUNAUTE"].HeaderText = "communaute";
                     }
                     else if (table == "jeuxvideos")
                     {
