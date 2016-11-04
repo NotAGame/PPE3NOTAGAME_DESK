@@ -583,5 +583,68 @@ namespace PPE3_NotaGame
 				}
 			}
 		}
+
+		/// <summary>
+		/// permet le crud sur la table communautes
+		/// </summary>
+		/// <param name="c">définit l'action : c:create, u update, d delete</param>
+		/// <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
+		public static void crud_communautes(Char c, int indice)
+		{
+			if (c == 'd') // cas de la suppression
+			{
+				//   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer cette communauté " + vmodele.DT[11].Rows[indice][1].ToString() + " ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (rep == DialogResult.Yes)
+				{
+					// on supprime l’élément du DataTable
+					vmodele.DT[11].Rows[indice].Delete();        // suppression dans le DataTable
+					vmodele.DA[11].Update(vmodele.DT[11]);            // mise à jour du DataAdapter
+				}
+			}
+			else
+			{
+				// cas de l'ajout et modification
+				FormCRUDCommunautes formCRUD = new FormCRUDCommunautes();  // création de la nouvelle forme
+				if (c == 'u')   // mode update donc on récupère les champs
+				{
+					// on remplit les zones par les valeurs du dataGridView correspondantes
+					formCRUD.TbLibelle.Text = vmodele.DT[11].Rows[indice][1].ToString();
+				}
+				// on affiche la nouvelle form
+				formCRUD.ShowDialog();
+
+				// si l’utilisateur clique sur OK
+				if (formCRUD.DialogResult == DialogResult.OK)
+				{
+					if (c == 'c') // ajout
+					{
+						// on crée une nouvelle ligne dans le dataView
+						if (!string.IsNullOrWhiteSpace(formCRUD.TbLibelle.Text))
+						{
+							DataRow NouvLigne = vmodele.DT[11].NewRow();
+							NouvLigne["libelle"] = formCRUD.TbLibelle.Text;
+							vmodele.DT[11].Rows.Add(NouvLigne);
+							vmodele.DA[11].Update(vmodele.DT[11]);
+						}
+					}
+
+					if (c == 'u')  // modif
+					{
+						// on met à jour le dataTable avec les nouvelles valeurs
+						vmodele.DT[11].Rows[indice]["libelle"] = formCRUD.TbLibelle.Text;
+						vmodele.DA[11].Update(vmodele.DT[11]);
+					}
+
+					// MessageBox.Show("OK : données enregistrées Constructeur");
+					formCRUD.Dispose();  // on ferme la form
+				}
+				else
+				{
+					MessageBox.Show("Annulation : aucune donnée enregistrée");
+					formCRUD.Dispose();
+				}
+			}
+		}
 	}
 }

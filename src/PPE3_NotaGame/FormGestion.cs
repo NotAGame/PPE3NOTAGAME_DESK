@@ -108,7 +108,7 @@ namespace PPE3_NotaGame
                         dGvJeux.Columns["NOMJV"].HeaderText = "Nom Jeux videos";
                         dGvJeux.Columns["NOMS"].HeaderText = "Nom Support";
                     }
-					else if (table == "genre")
+					else if (table == "genres")
 					{
 						bindingSource1.DataSource = Controleur.Vmodele.DT[8];
 						dGvJeux.DataSource = bindingSource1;
@@ -123,6 +123,13 @@ namespace PPE3_NotaGame
 						dGvJeux.Columns["idg"].HeaderText = "Id genre";
 						dGvJeux.Columns["nomjv"].HeaderText = "Nom jeu";
 						dGvJeux.Columns["libelle"].HeaderText = "Libellé genre";
+					}
+					else if (table == "communautes")
+					{
+						bindingSource1.DataSource = Controleur.Vmodele.DT[11];
+						dGvJeux.DataSource = bindingSource1;
+						dGvJeux.Columns["id"].HeaderText = "Id";
+						dGvJeux.Columns["libelle"].HeaderText = "Libellé";
 					}
 
 					// mise à jour du dataGridView via le bindingSource rempli par le DataTable
@@ -158,8 +165,9 @@ namespace PPE3_NotaGame
                 if (table == "jeuxvideos") Controleur.crud_Jeuxvideo('c', -1);
                 if (table == "users") Controleur.crud_Users('c', -1);
                 if (table == "compatible") Controleur.crud_compatible('c', -1);
-				if (table == "genre") Controleur.crud_genre('c', -1);
+				if (table == "genres") Controleur.crud_genre('c', -1);
 				if (table == "classer") Controleur.crud_classer('c', -1);
+				if (table == "communautes") Controleur.crud_communautes('c', -1);
 			}
             else
             {
@@ -176,8 +184,9 @@ namespace PPE3_NotaGame
                         if (table == "jeuxvideos") Controleur.crud_Jeuxvideo('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "users") Controleur.crud_Users('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "compatible") Controleur.crud_compatible('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
-						if (table == "genre") Controleur.crud_genre('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+						if (table == "genres") Controleur.crud_genre('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "classer") Controleur.crud_classer('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+						if (table == "communautes") Controleur.crud_genre('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 					}
                     if (sender == supprimerToolStripMenuItem)
                     {
@@ -189,8 +198,9 @@ namespace PPE3_NotaGame
                         if (table == "jeuxvideos") Controleur.crud_Jeuxvideo('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "users") Controleur.crud_Users('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
                         if (table == "compatible") Controleur.crud_compatible('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
-						if (table == "genre") Controleur.crud_genre('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+						if (table == "genres") Controleur.crud_genre('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "classer") Controleur.crud_classer('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+						if (table == "communautes") Controleur.crud_communautes('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 					}
                    
                 }

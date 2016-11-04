@@ -108,3 +108,7 @@ C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGam
 C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormPrincipale.resources
 C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.Properties.Resources.resources
 C:\Users\julien\Desktop\dossier octobre\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csproj.GenerateResource.Cache
+C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.config
+C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.XML
+C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.exe
+C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.pdb
