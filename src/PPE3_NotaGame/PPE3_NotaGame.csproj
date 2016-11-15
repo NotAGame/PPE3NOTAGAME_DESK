@@ -54,6 +54,12 @@
     <Compile Include="FormCRUDClasser.Designer.cs">
       <DependentUpon>FormCRUDClasser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCRUDCommunautes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCRUDCommunautes.Designer.cs">
+      <DependentUpon>FormCRUDCommunautes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCRUDCompatible.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCRUDClasser.resx">
       <DependentUpon>FormCRUDClasser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCRUDCommunautes.resx">
+      <DependentUpon>FormCRUDCommunautes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCRUDCompatible.resx">
       <DependentUpon>FormCRUDCompatible.cs</DependentUpon>

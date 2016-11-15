@@ -68,6 +68,13 @@
             <param name="c">définit l'action : c:create, u update, d delete</param>
             <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
         </member>
+        <member name="M:PPE3_NotaGame.Controleur.crud_communautes(System.Char,System.Int32)">
+            <summary>
+            permet le crud sur la table communautes
+            </summary>
+            <param name="c">définit l'action : c:create, u update, d delete</param>
+            <param name="indice">indice de l'élément sélectionné à modifier ou supprimer, -1 si ajout</param>
+        </member>
         <member name="F:PPE3_NotaGame.FormCRUDClasser.components">
             <summary>
             Required designer variable.
@@ -80,6 +87,23 @@
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:PPE3_NotaGame.FormCRUDClasser.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:PPE3_NotaGame.FormCRUDCommunautes.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDCommunautes.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDCommunautes.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.

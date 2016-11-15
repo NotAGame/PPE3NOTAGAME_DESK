@@ -186,7 +186,7 @@ namespace PPE3_NotaGame
                         if (table == "compatible") Controleur.crud_compatible('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "genres") Controleur.crud_genre('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "classer") Controleur.crud_classer('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
-						if (table == "communautes") Controleur.crud_genre('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+						if (table == "communautes") Controleur.crud_communautes('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 					}
                     if (sender == supprimerToolStripMenuItem)
                     {
