@@ -52,7 +52,7 @@
 			// 
 			// btnOK
 			// 
-			this.btnOK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnOK.Location = new System.Drawing.Point(16, 16);
 			this.btnOK.Name = "btnOK";
 			this.btnOK.Size = new System.Drawing.Size(75, 23);
@@ -70,7 +70,7 @@
 			this.btnAnnuler.Text = "Annuler";
 			this.btnAnnuler.UseVisualStyleBackColor = true;
 			// 
-			// FormCRUDCommutautes
+			// FormCRUDCommunautes
 			// 
 			this.AcceptButton = this.btnOK;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -83,7 +83,7 @@
 			this.Controls.Add(this.label1);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "FormCRUDCommutautes";
+			this.Name = "FormCRUDCommunautes";
 			this.Text = "FormCRUDCommutautes";
 			this.ResumeLayout(false);
 			this.PerformLayout();

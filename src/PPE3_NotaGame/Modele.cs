@@ -92,7 +92,7 @@ namespace PPE3_NotaGame
         public Modele()
         {
 
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 13; i++)
             {
                 dA.Add(new MySqlDataAdapter());
                 dT.Add(new DataTable());
@@ -217,6 +217,13 @@ namespace PPE3_NotaGame
 			if (table == "communautes")
 			{
 				charger("select * from communautes", DT[11], dA[11]);
+			}
+			if (table == "noter")
+			{
+				charger("select * from communautes", DT[11], DA[11]);
+				charger("select IDU, EMAIL, PSEUDO, idCommunaute, libelle from users inner join communautes on (users.idCommunaute = communautes.id)", dT[4], dA[4]);
+				charger("select * from jeuxvideos", dT[5], dA[5]);
+				charger("select noter.idjv, idUser, note from noter inner join jeuxvideos on (noter.idjv = jeuxvideos.idjv) inner join users on (idUser = idU)", DT[12], dA[12]);
 			}
 		}
     }

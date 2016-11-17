@@ -131,3 +131,4 @@ C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\b
 C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\bin\Debug\MySql.Data.dll
 C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\bin\Debug\MySql.Data.xml
 C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDCommunautes.resources
+C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDNoter.resources

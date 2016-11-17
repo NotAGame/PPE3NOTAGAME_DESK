@@ -131,6 +131,14 @@ namespace PPE3_NotaGame
 						dGvJeux.Columns["id"].HeaderText = "Id";
 						dGvJeux.Columns["libelle"].HeaderText = "Libellé";
 					}
+					else if (table == "noter")
+					{
+						bindingSource1.DataSource = Controleur.Vmodele.DT[12];
+						dGvJeux.DataSource = bindingSource1;
+						dGvJeux.Columns["nomjv"].HeaderText = "Jeu";
+						dGvJeux.Columns["pseudo"].HeaderText = "Pseudo";
+						dGvJeux.Columns["note"].HeaderText = "Note";
+					}
 
 					// mise à jour du dataGridView via le bindingSource rempli par le DataTable
 					dGvJeux.Refresh();
@@ -168,6 +176,7 @@ namespace PPE3_NotaGame
 				if (table == "genres") Controleur.crud_genre('c', -1);
 				if (table == "classer") Controleur.crud_classer('c', -1);
 				if (table == "communautes") Controleur.crud_communautes('c', -1);
+				if (table == "noter") Controleur.crud_noter('c', -1);
 			}
             else
             {
@@ -187,6 +196,7 @@ namespace PPE3_NotaGame
 						if (table == "genres") Controleur.crud_genre('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "classer") Controleur.crud_classer('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "communautes") Controleur.crud_communautes('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+						if (table == "noter") Controleur.crud_noter('u', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 					}
                     if (sender == supprimerToolStripMenuItem)
                     {
@@ -201,6 +211,7 @@ namespace PPE3_NotaGame
 						if (table == "genres") Controleur.crud_genre('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "classer") Controleur.crud_classer('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 						if (table == "communautes") Controleur.crud_communautes('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
+						if (table == "noter") Controleur.crud_noter('d', Convert.ToInt32(dGvJeux.SelectedRows[0].Index));
 					}
                    
                 }

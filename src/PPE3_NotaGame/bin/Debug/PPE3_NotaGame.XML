@@ -192,6 +192,23 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:PPE3_NotaGame.FormCRUDNoter.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDNoter.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PPE3_NotaGame.FormCRUDNoter.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:PPE3_NotaGame.FormCRUDSupport">
             <summary>
             FormCRUDSupport : form permettant l'ajout/modification d'un support

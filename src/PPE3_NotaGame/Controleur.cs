@@ -647,5 +647,70 @@ foreach (DataRow row in vmodele.DT[11].Rows)
 				}
 			}
 		}
+
+		public static void crud_noter(Char c, int indice)
+		{
+			if (c == 'd') // cas de la suppression
+			{
+				//   DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer ce constructeur "+ vmodele.DTConstructeur.Rows[indice][1].ToString()+ " ? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				DialogResult rep = MessageBox.Show("Etes-vous sûr de vouloir supprimer cette notation " + vmodele.DT[12].Rows[indice][2].ToString() + " / 5 ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (rep == DialogResult.Yes)
+				{
+					// on supprime l’élément du DataTable
+					vmodele.DT[12].Rows[indice].Delete();        // suppression dans le DataTable
+					vmodele.DA[12].Update(vmodele.DT[12]);            // mise à jour du DataAdapter
+				}
+			}
+			else
+			{
+				// cas de l'ajout et modification
+				FormCRUDNoter formCRUD = new FormCRUDNoter();  // création de la nouvelle forme
+				foreach (DataRow row in vmodele.DT[5].Rows)
+					formCRUD.CbxJeux.Items.Add(row[1].ToString());
+				foreach (DataRow row in vmodele.DT[4].Rows)
+					formCRUD.CbxUsers.Items.Add(row[1].ToString());
+				if (c == 'u')   // mode update donc on récupère les champs
+				{
+					// on remplit les zones par les valeurs du dataGridView correspondantes
+					formCRUD.CbxJeux.SelectedIndex = Convert.ToInt32(vmodele.DT[12].Rows[indice][0]) - 1;
+					formCRUD.CbxUsers.SelectedIndex = Convert.ToInt32(vmodele.DT[12].Rows[indice][1]) - 1;
+					formCRUD.NudNote.Value = Convert.ToInt32(vmodele.DT[12].Rows[indice][2]);
+				}
+				// on affiche la nouvelle form
+				formCRUD.ShowDialog();
+
+				// si l’utilisateur clique sur OK
+				if (formCRUD.DialogResult == DialogResult.OK)
+				{
+					if (c == 'c') // ajout
+					{
+						// on crée une nouvelle ligne dans le dataView
+						DataRow NouvLigne = vmodele.DT[12].NewRow();
+						NouvLigne["idjv"] = formCRUD.CbxJeux.SelectedIndex + 1;
+						NouvLigne["idUser"] = formCRUD.CbxUsers.SelectedIndex + 1;
+						NouvLigne["note"] = formCRUD.NudNote.Value;
+						vmodele.DT[12].Rows.Add(NouvLigne);
+						vmodele.DA[12].Update(vmodele.DT[12]);
+					}
+
+					if (c == 'u')  // modif
+					{
+						// on met à jour le dataTable avec les nouvelles valeurs
+						vmodele.DT[12].Rows[indice]["idjv"] = formCRUD.CbxJeux.SelectedIndex + 1;
+						vmodele.DT[12].Rows[indice]["idUser"] = formCRUD.CbxUsers.SelectedIndex + 1;
+						vmodele.DT[12].Rows[indice]["note"] = formCRUD.NudNote.Value;
+						vmodele.DA[12].Update(vmodele.DT[12]);
+					}
+
+					// MessageBox.Show("OK : données enregistrées Constructeur");
+					formCRUD.Dispose();  // on ferme la form
+				}
+				else
+				{
+					MessageBox.Show("Annulation : aucune donnée enregistrée");
+					formCRUD.Dispose();
+				}
+			}
+		}
 	}
 }
