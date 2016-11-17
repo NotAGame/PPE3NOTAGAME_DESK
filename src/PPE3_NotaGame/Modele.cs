@@ -189,7 +189,8 @@ namespace PPE3_NotaGame
             }
             if (table == "users")
             {
-                charger("select * from users", dT[4], dA[4]);
+				charger("select * from communautes", DT[11], DA[11]);
+				charger("select IDU, EMAIL, PSEUDO, idCommunaute, libelle from users inner join communautes on (users.idCommunaute = communautes.id)", dT[4], dA[4]);
             }
             if (table == "jeuxvideos")
             {
@@ -210,7 +211,7 @@ namespace PPE3_NotaGame
 			{
 				charger("select * from jeuxvideos", dT[5], dA[5]);
 				charger("select * from genres", DT[8], dA[8]);
-				charger("select c.idjv, idg, nomjv, libelle from classer c inner join jeuxvideos j on (c.idjv = j.idjv) inner join genre on (idg = id)", dT[9], DA[9]);
+				charger("select c.idjv idJeu, c.idg idGenre, nomjv, libelle from classer c inner join jeuxvideos j on (c.idjv = j.idjv) inner join genres on (idg = id)", dT[9], DA[9]);
 				charger("select * from classer", dT[10], DA[10]);
 			}
 			if (table == "communautes")

@@ -311,11 +311,12 @@ namespace PPE3_NotaGame
             {
                 // cas de l'ajout et modification
                 FormCRUDUsers formCRUD = new FormCRUDUsers(); // création de la nouvelle forme
+foreach (DataRow row in vmodele.DT[11].Rows)
+	formCRUD.CbxComm.Items.Add(row[1].ToString());
                 if (c == 'c')  // mode ajout donc pas de valeur à passer à la nouvelle forme
                 {
                     formCRUD.TbEmail.Clear();
                     formCRUD.TbPseudo.Clear();
-                    formCRUD.TbComm.Clear();
                 }
 
                 if (c == 'u')   // mode update donc on récupère les champs
@@ -323,7 +324,7 @@ namespace PPE3_NotaGame
                     // on remplit les zones par les valeurs du dataGridView correspondantes
                     formCRUD.TbEmail.Text = vmodele.DT[4].Rows[indice][1].ToString();
                     formCRUD.TbPseudo.Text = vmodele.DT[4].Rows[indice][2].ToString();
-                    formCRUD.TbComm.Text = vmodele.DT[4].Rows[indice][3].ToString();
+					formCRUD.CbxComm.SelectedIndex = Convert.ToInt32(vmodele.DT[4].Rows[indice][3]) - 1;
 
                 }
                 // on affiche la nouvelle form
@@ -334,16 +335,16 @@ namespace PPE3_NotaGame
                 {
                     if (c == 'c') // ajout
                     {
-                        // on crée une nouvelle ligne dans le dataView
-                        if (formCRUD.TbEmail.Text != "" && formCRUD.TbPseudo.Text != "" && formCRUD.TbComm.Text != "")
-                        {
-                            DataRow NouvLigne = vmodele.DT[4].NewRow();
-                            NouvLigne["email"] = formCRUD.TbEmail.Text;
-                            NouvLigne["pseudo"] = formCRUD.TbPseudo.Text;
-                            NouvLigne["communaute"] = formCRUD.TbComm.Text;
-                            vmodele.DT[4].Rows.Add(NouvLigne);
-                            vmodele.DA[4].Update(vmodele.DT[4]);
-                        }
+						// on crée une nouvelle ligne dans le dataView
+						if (formCRUD.TbEmail.Text != "" && formCRUD.TbPseudo.Text != "")
+						{
+							DataRow NouvLigne = vmodele.DT[4].NewRow();
+							NouvLigne["email"] = formCRUD.TbEmail.Text;
+							NouvLigne["pseudo"] = formCRUD.TbPseudo.Text;
+							NouvLigne["idCommunaute"] = formCRUD.CbxComm.SelectedIndex + 1;
+							vmodele.DT[4].Rows.Add(NouvLigne);
+							vmodele.DA[4].Update(vmodele.DT[4]);
+						}
 
                     }
 
@@ -352,7 +353,7 @@ namespace PPE3_NotaGame
                         // on met à jour le dataTable avec les nouvelles valeurs
                         vmodele.DT[4].Rows[indice]["email"] = formCRUD.TbEmail.Text;
                         vmodele.DT[4].Rows[indice]["pseudo"] = formCRUD.TbPseudo.Text;
-                        vmodele.DT[4].Rows[indice]["communaute"] = formCRUD.TbComm.Text;
+                        vmodele.DT[4].Rows[indice]["idCommunaute"] = formCRUD.CbxComm.SelectedIndex + 1;
                         vmodele.DA[4].Update(vmodele.DT[4]);
                     }
 

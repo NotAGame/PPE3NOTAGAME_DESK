@@ -86,7 +86,7 @@ namespace PPE3_NotaGame
                         dGvJeux.Columns["IDU"].HeaderText = "Id Users";
                         dGvJeux.Columns["EMAIL"].HeaderText = "email";
                         dGvJeux.Columns["PSEUDO"].HeaderText = "pseudo";
-                        dGvJeux.Columns["IDCOMMUNAUTE"].HeaderText = "communaute";
+                        dGvJeux.Columns["libelle"].HeaderText = "communaute";
                     }
                     else if (table == "jeuxvideos")
                     {
@@ -119,8 +119,8 @@ namespace PPE3_NotaGame
 					{
 						bindingSource1.DataSource = Controleur.Vmodele.DT[9];
 						dGvJeux.DataSource = bindingSource1;
-						dGvJeux.Columns["idjv"].HeaderText = "Id jeu";
-						dGvJeux.Columns["idg"].HeaderText = "Id genre";
+						dGvJeux.Columns["idJeu"].HeaderText = "Id jeu";
+						dGvJeux.Columns["idGenre"].HeaderText = "Id genre";
 						dGvJeux.Columns["nomjv"].HeaderText = "Nom jeu";
 						dGvJeux.Columns["libelle"].HeaderText = "Libellé genre";
 					}
