@@ -83,7 +83,11 @@ namespace PPE3_NotaGame
             F.Show();
         }
 
+        private void consultationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormConsult F = new FormConsult();
 
-    
+            F.Show();
+        }
     }
 }

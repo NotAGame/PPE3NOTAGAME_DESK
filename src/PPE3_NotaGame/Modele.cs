@@ -92,7 +92,7 @@ namespace PPE3_NotaGame
         public Modele()
         {
 
-            for (int i = 0; i < 13; i++)
+            for (int i = 0; i < 16; i++)
             {
                 dA.Add(new MySqlDataAdapter());
                 dT.Add(new DataTable());
@@ -225,6 +225,40 @@ namespace PPE3_NotaGame
 				charger("select * from jeuxvideos", dT[5], dA[5]);
 				charger("select noter.idjv, idUser, note from noter inner join jeuxvideos on (noter.idjv = jeuxvideos.idjv) inner join users on (idUser = idU)", DT[12], dA[12]);
 			}
+            if (table == "consultJeux")
+            {
+                String req = "SELECT jv.NOMJV, jv.ANNEESORTIE, jv.CLASSIFICATION, jv.EDITEUR, jv.DESCRIPTION, AVG(n.note) AS note FROM jeuxvideos jv LEFT JOIN noter n ON n.idjv = jv.IDJV GROUP BY jv.NOMJV ORDER BY AVG(n.note) DESC;";
+                charger(req, DT[13], DA[13]);
+            }
 		}
+
+        public void charger_donnees(string table, string param)
+        {
+            chargement = false;
+            if (!connopen) return;
+
+            if (table == "consultJeuxGenre")
+            {
+                String req = "SELECT jv.IDJV, jv.NOMJV, jv.ANNEESORTIE, jv.CLASSIFICATION, jv.EDITEUR, jv.DESCRIPTION, AVG(n.note) AS note, g.libelle ";
+                req += "FROM jeuxvideos jv LEFT JOIN noter n ON n.idjv = jv.IDJV ";
+                req += "INNER JOIN classer c ON c.IDJV = jv.IDJV ";
+                req += "INNER JOIN genres g ON g.ID = c.idg ";
+                req += "WHERE g.libelle LIKE \"" + param;
+                req += "\" GROUP BY jv.NOMJV ";
+                req += "ORDER BY AVG(n.note) DESC;";
+                charger(req, DT[14], DA[14]);
+            }
+            if (table == "consultJeuxSupport")
+            {
+                String req = "SELECT jv.NOMJV, jv.ANNEESORTIE, jv.CLASSIFICATION, jv.EDITEUR, jv.DESCRIPTION, AVG(n.note) AS note, s.NOMS ";
+                req += "FROM jeuxvideos jv LEFT JOIN noter n ON n.idjv = jv.IDJV ";
+                req += "INNER JOIN compatible c ON c.IDJV = jv.IDJV ";
+                req += "INNER JOIN support s ON s.IDS = c.IDS ";
+                req += "WHERE s.NOMS LIKE \"" + param;
+                req += "\" GROUP BY jv.NOMJV ";
+                req += "ORDER BY AVG(n.note) DESC; ";
+                charger(req, DT[15], DA[15]);
+            }
+        }
     }
 }

@@ -132,3 +132,27 @@ C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\b
 C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\bin\Debug\MySql.Data.xml
 C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDCommunautes.resources
 C:\Users\eurobraille\Documents\Repositories\NotAGame\desktop\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDNoter.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.config
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.XML
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.exe
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.pdb
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.pdb
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.CodeAnalysisLog.xml
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PPE3_NotaGame.exe.lastcodeanalysissucceeded
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\MySql.Data.xml
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csprojResolveAssemblyReference.cache
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDClasser.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDCommunautes.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDCompatible.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDConstructeur.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDGenre.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDJeuxvideox.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDNoter.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDSupport.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormCRUDUsers.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormGestion.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormPrincipale.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.Properties.Resources.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csproj.GenerateResource.Cache
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormConsult.resources

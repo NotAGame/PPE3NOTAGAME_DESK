@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controleur.cs" />
+    <Compile Include="FormConsult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsult.Designer.cs">
+      <DependentUpon>FormConsult.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCRUDClasser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="Modele.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormConsult.resx">
+      <DependentUpon>FormConsult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCRUDClasser.resx">
       <DependentUpon>FormCRUDClasser.cs</DependentUpon>
     </EmbeddedResource>
