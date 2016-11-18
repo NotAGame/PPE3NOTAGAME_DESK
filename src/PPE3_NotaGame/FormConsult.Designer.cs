@@ -84,6 +84,7 @@
             this.btPDF.TabIndex = 5;
             this.btPDF.Text = "Exporter en pdf";
             this.btPDF.UseVisualStyleBackColor = true;
+            this.btPDF.Click += new System.EventHandler(this.btPDF_Click);
             // 
             // tbConsult
             // 

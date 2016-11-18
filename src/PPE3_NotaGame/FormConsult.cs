@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PdfSharp.Pdf;
+using PdfSharp.Drawing;
 
 namespace PPE3_NotaGame
 {
@@ -60,7 +62,7 @@ namespace PPE3_NotaGame
                     if (i >= 5) { break; };
                 }
 
-                triEffectue = "Par Genre : " + cbGenre.Text;
+                triEffectue = "Par Genre " + cbGenre.Text;
             }
             else
             {
@@ -89,7 +91,7 @@ namespace PPE3_NotaGame
                     if (i >= 5) { break; }
                 }
 
-                triEffectue = "Par Support : " + cbSupport.Text;
+                triEffectue = "Par Support " + cbSupport.Text;
             }
             else
             {
@@ -111,6 +113,28 @@ namespace PPE3_NotaGame
             }
 
             triEffectue = "Aucun tri";
+        }
+
+        private void btPDF_Click(object sender, EventArgs e)
+        {
+            PdfDocument pdfDoc = new PdfDocument();
+            pdfDoc.Info.Title = "Résultats du tri " + triEffectue;
+
+            PdfPage pDocPage = pdfDoc.AddPage();
+
+            XGraphics gfx = XGraphics.FromPdfPage(pDocPage);
+            XFont fontTitle = new XFont("Verdana", 30, XFontStyle.Bold);
+            XFont font = new XFont("Verdana", 20, XFontStyle.Regular);
+            gfx.DrawString("Résultats du tri " + triEffectue, fontTitle, XBrushes.Black, new XRect(0, 0, pDocPage.Width, pDocPage.Height), XStringFormats.TopLeft);
+            int y = 40;
+            foreach (String line in tbConsult.Lines)
+            {
+                gfx.DrawString(line, font, XBrushes.Black, new XRect(0, y, pDocPage.Width, pDocPage.Height), XStringFormats.TopLeft);
+                y += 30;
+            }
+
+            pdfDoc.Save(@"Resultats_Meilleurs_Jeux " + triEffectue + ".pdf");
+
         }
     }
 }

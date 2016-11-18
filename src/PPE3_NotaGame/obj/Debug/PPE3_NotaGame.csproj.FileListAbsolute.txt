@@ -156,3 +156,9 @@ C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK
 C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.Properties.Resources.resources
 C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.csproj.GenerateResource.Cache
 C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\obj\Debug\PPE3_NotaGame.FormConsult.resources
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PdfSharp.Charting.dll
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PdfSharp.dll
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PdfSharp.xml
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\PdfSharp.Charting.xml
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\LEFEVRE Flavien\Documents\Visual Studio 2015\Projects\PPE3NOTAGAME_DESK\src\PPE3_NotaGame\bin\Debug\de\PdfSharp.Charting.resources.dll
